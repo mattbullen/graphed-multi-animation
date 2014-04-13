@@ -1,8 +1,8 @@
-## Random Animation With Delta Graphs
+## Delta-Graphed Random CSS Animation
 
 ##### LIVE DEMO: http://bullen.io/graphed-multi-animation/demo.html
 
-This demo is an earlier version of my [spline animation demo](https://github.com/mattbullen/3D-spline-animation). Like that demo, this one is also hand-rolled using plain, no-library Javascript.
+This demo is an earlier version of my [3D spline animation](https://github.com/mattbullen/3D-spline-animation) demo. Like that demo, this one is also hand-rolled using plain, no-library Javascript.
 
 This animates a small SVG-injected box around the screen by tweening the CSS properties `margin-top` and `margin-left` to random values. Each property takes a radomly selected tweening pattern: plain old linear intervals up to multi-point splines.
 
