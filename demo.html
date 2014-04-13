@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+
+<html id="html" lang="en">
+
+<head id="head">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+<meta name="description" content="Graphed Spline Demo"/>
+<meta name="author" content="Matthew Bullen"/>
+<meta name="copyright" content="Copyright April 12, 2014 by Matthew Bullen, All Rights Reserved"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title id="title"> Graphed Spline Demo </title>
+<link id="favicon" rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAFpOLgnAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAEzlAABM5QF1zvCVAAAFF0lEQVRo3t2aTWhcVRTHf+fNTJIaMIrGFPED/KhfC6ug6EJciIIghSoUQVyIuhBEKbhwZUS6KbgQcSfqRkRaRATRqrjTil1IQTGoVXFRFAkltqE0ycz7u5jzxpub9zmZfNgLh/fmvPvuPd/n3PPGJFE02tmNmQ1mSTKAJJzpyNvN7NlVb4ZvF74pybJJpW9aGbWFD9sxC9mSSUxEGeNHVj0YUBSTHe9TSNWqB2a2I3rek7S85i1JAwDUR63FAdMZrp27vdm03+4M0Kea7HTa8UsZLqF6POHXsSJBHIpe+Bv4CjgsqVcp1jq2fIHTPWDVechXXKzRaHQkddeYdWhVbitvOnrRzGyViAvEa8CKQ5KrSDMbA6Z88nHn85iktC4PPUmDhat4mASScLFSjUs6CxxzCh6tZNrxPX+2U1JtPQxcMpTSp8Bi8Psc8Luk2Vou2jjSjHTEgoncuy58nrdOBrmc5Ai6F3hKdu25E8cm0A79tDYnRRQCE8DbgVl0gdnMJwbzht3EfWcS+AFIfe5K3tx2Lesw6/miYYBJgZbje8AJSTfWtq4q4w/GEjDu96mLyeJJSU0LtAKYCBZNMgLN7JbGm9QYf0a/dw0jrvlAJ+bE7XBRpRGxK5LG6m6SVkkxuAroABdLWihMUTXxuRtloX9LY1fCJoy8bNipEFfGejdL2o2isFvOwYYReB7YC4wVxbg8ca00lMYlwGHg4/XoJPXY1PMo2/VwEtahLeA+M7t7UMY02ETAfklth47DBHCrbxaudTQKpLU5GS/A/+SbxTpOR2bC6p9mWhvqJ2bWWpNmYd4LwsbhYzI4DoTE7TOz1yP8VXUOJgYciPwgjSC0snDezUV+UocTq/g9KNs3InalQakE8J2ZfZmnkzp+8kJB6m0BL0Vr3QvsGYaTsjkHgX2R578x0lDvJvxJhJ7ZiHxy5SicMS1xyHFgLkLPDeMni54zMlgAzhTklmVg9zB+MulQp6j4A/ixjrjyvDwt8fwsjLwl6fq8sJLHyRzwQQnFXeCsi+0kcETSnJkltUsin2wN6i6poq7alLprcw6mW1HbFficjbDYVFRGa8MZMTPzjZ4CnnE/tyEI7wVwztc5BZw0s9/8tHm8pHIYjUaAq4HbnCjbEBvvV53LwEdeoVgTbTU1F6thMusZY8AjfpR8LYg+m3bIyszltMMZxy0Fxb9q5sLE5z5nZt9ISvOKn1EzkhH3iqQp4DKHaeAib49OARf6iX/CzwdZY+ShIHHEmu8Cd5nZ45KWqzTTHpFGuh6Blhr4hNH/RHE/8IUHglaOGe/aNuf3khwm4NKifrVfD9XxwVFppBX0FyprREk9t/13gceC5l/IxBjwpKTvzSypattQ1sUNMv+BITrEVZAGvVcFPVjR/zhzQxltdXodm2ZagWln0p71IDAD/LIVPa66NXMo/Tw6Xg7aka+aWSevP7MRPpJl+qPAtzmtl4T/PvZNeBieAa71rlUW8do59DwP7Ac+BB6uLF3W6SOZlF/0ee0K6Dhj4/S/AgJcB/xV4U+fbZaP9Fwo3QpYkbQsaUnSir9zArgT+LVk/QfM7MHtmkfCsUD4ZTt/TG9bRoJu4tPAHSVTlyo0NrKEeLmZXePOrJww2woSZ8frriuAvWa2J+oo5433JX29XRNiFWTJ8h2noVVGa5vtNdLA5H8G7gH+CZp1297Zs8j3HrDbpX+TpPksuv1vuih+eErp/0ujMVHnTTso4TwZ/wKpmLzPy5yEyAAAAABJRU5ErkJggg==" type="image/png"/>
+
+﻿<style id="style-base" type="text/css">
+
+#head {
+  display: none !important;
+}
+
+#html, #body {
+  margin: 0px !important;
+  border: 0px !important;
+  padding: 0px !important;
+  outline: 0px !important;
+}
+
+* {
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-feature-settings: "liga", "dlig"; 
+  -o-font-feature-settings: "liga", "dlig"; 
+  -ms-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1"; 
+  -moz-font-feature-settings: "liga", "dlig"; 
+  font-feature-settings: "liga", "dlig";
+  
+  -webkit-box-sizing: border-box;  
+  -o-box-sizing: border-box; 
+  -ms-box-sizing: border-box;                   
+  -moz-box-sizing: border-box;                       
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased; 
+
+  -webkit-text-rendering: geometricPrecision;
+  -o-text-rendering: geometricPrecision;
+  -ms-text-rendering: geometricPrecision;
+  -moz-text-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+
+  -webkit-text-size-adjust: 100%;                   
+  -o-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  image-rendering: optimizeQuality;
+  vertical-align: middle;
+}
+
+svg {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  vertical-align: top;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.invisible {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)" !important;
+  filter: alpha(opacity=0) !important;
+  -moz-opacity: 0 !important;
+  -khtml-opacity: 0 !important;
+  opacity: 0 !important;
+
+  -webkit-transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -moz-transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -ms-transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.css-cubicIO-300ms {
+  -webkit-transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -moz-transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -ms-transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+</style>
+  
+<script>
+
+//General XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+(function() {
+  window.Node = window.Node || function Node() { throw new TypeError("Illegal constructor"); };
+  Node.ELEMENT_NODE = 1;
+  Node.ATTRIBUTE_NODE = 2;
+  Node.TEXT_NODE = 3;
+  Node.CDATA_SECTION_NODE = 4;
+  Node.ENTITY_REFERENCE_NODE = 5;
+  Node.ENTITY_NODE = 6;
+  Node.PROCESSING_INSTRUCTION_NODE = 7;
+  Node.COMMENT_NODE = 8;
+  Node.DOCUMENT_NODE = 9;
+  Node.DOCUMENT_TYPE_NODE = 10;
+  Node.DOCUMENT_FRAGMENT_NODE = 11;
+  Node.NOTATION_NODE = 12;
+}());
+  
+var cleanElementHTML = function cleanElementHTML(o) {
+  o.normalize();
+  var imax = o.childNodes.length;
+  for (var i = 0; i < imax; i++) {
+    var p = o.childNodes[i];
+    if (p && p.nodeType == 3 && !/\S/.test(p.nodeValue)) {
+      o.removeChild(p);
+      i--;
+    }
+    if (p && p.nodeType == 1) {
+      cleanElementHTML(p);
+    }
+  }
+  return o;
+};
+
+(function() {
+  var methodsList = ["assert", "clear", "count", "debug", "dir", "dirxml", "error", "exception", "group", "groupCollapsed", "groupEnd", "info", "log", "markTimeline", "profile", "profileEnd", "table", "time", "timeEnd", "timeStamp", "trace", "warn"];
+  var length = methodsList.length;
+  var console = (window.console = window.console || {});
+  while (length--) {
+    var eachMethod = methodsList[length];
+    if (!console[eachMethod]) {
+      console[eachMethod] = function() {};
+    }
+  }
+}());
+
+var logObject = function(o) {
+  console.log(" ");
+  var content = "";
+  for (var p in o) {
+    if (typeof o[p] === "function") {
+      console.log(p + ": " + o[p].toString().substring(0, 8));
+	} else if (p === "o") {
+	  console.log(p + ": " + (o[p].id || o[p].className || "target"));
+	} else {
+	  console.log(p + ": " + o[p]);
+	}
+    var subA = o[p];
+    for (var a in subA) {
+      if (p !== "o" && subA.hasOwnProperty(a) && subA[a] !== undefined && subA[a] !== null && !parseInt(a) && a !== 0 && a !== "0") { 
+        console.log("   " + a + ": " + subA[a]);
+        var subB = subA[a];
+          for (var b in subB) {
+          if (p !== "o" && subB.hasOwnProperty(b) && subB[b] !== undefined && subB[b] !== null && !parseInt(b) && b !== 0 && b !== "0") { 
+            console.log("      " + b + ": " + subB[b]);
+          } //b
+        } //b
+      } //a
+    } //a
+  } //p
+  console.log(" ");
+  return false;
+};
+
+window.performance = window.performance || {};
+window.performance.now = (function() {
+  return window.performance.now       ||
+         window.performance.mozNow    ||
+         window.performance.msNow     ||
+         window.performance.oNow      ||
+         window.performance.webkitNow ||
+         function() { return new Date().getTime(); };
+})();
+
+(function() {
+
+  if (!window.requestAnimationFrame && !window.cancelAnimationFrame) {
+    var vendors = ["moz", "ms", "o", "webkit"];
+    var imax = vendors.length;
+    for (var i = 0; i < imax; i++) {
+      var a = vendors[i] + "RequestAnimationFrame";
+      window.requestAnimationFrame = window[a];
+      var b = vendors[i] + "CancelAnimationFrame";
+      var c = vendors[i] + "CancelRequestAnimationFrame";
+      window.cancelAnimationFrame = window[b] || window[c];
+    }
+  }
+  
+  var tick = 1000 / 60;
+  var total = window.performance.now();
+  if (!window.requestAnimationFrame) {
+    window.requestAnimationFrame = function(f, data) {
+      var current = window.performance.now();
+      var wait = Math.max(0, ((total + tick) - current));
+      var frameID = window.setTimeout(function() { f(data); }, wait);
+      total = total + tick;
+      return frameID;
+    };
+  }
+
+  if (!window.cancelAnimationFrame) {
+    window.cancelAnimationFrame = function(frameID) {
+      clearTimeout(frameID);
+	  for (var i = 1; i < 10000; i++) {
+	    clearTimeout(i);
+	  }
+    };
+  }
+  
+}());
+
+(function (global) {
+
+  var B64_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+  
+  global.atob = global.atob || function (input) {
+    input = String(input);
+    var position = 0,
+        output = [],
+        buffer = 0, 
+        bits = 0, 
+        n;
+
+    input = input.replace(/\s/g, "");
+    if ((input.length % 4) === 0) { input = input.replace(/=+$/, ""); }
+    if ((input.length % 4) === 1) { throw new Error("InvalidCharacterError"); }
+    if (/[^+/0-9A-Za-z]/.test(input)) { throw new Error("InvalidCharacterError"); }
+
+    while (position < input.length) {
+      n = B64_ALPHABET.indexOf(input.charAt(position));
+      buffer = (buffer << 6) | n;
+      bits += 6;
+
+      if (bits === 24) {
+        output.push(String.fromCharCode((buffer >> 16) & 0xFF));
+        output.push(String.fromCharCode((buffer >>  8) & 0xFF));
+        output.push(String.fromCharCode(buffer & 0xFF));
+        bits = 0;
+        buffer = 0;
+      }
+      position += 1;
+    }
+
+    if (bits === 12) {
+      buffer = buffer >> 4;
+      output.push(String.fromCharCode(buffer & 0xFF));
+    } else if (bits === 18) {
+      buffer = buffer >> 2;
+      output.push(String.fromCharCode((buffer >> 8) & 0xFF));
+      output.push(String.fromCharCode(buffer & 0xFF));
+    }
+
+    return output.join("");
+  };
+
+  global.btoa = global.btoa || function (input) {
+    input = String(input);
+    var position = 0,
+        out = [],
+        o1, o2, o3,
+        e1, e2, e3, e4;
+
+    if (/[^\x00-\xFF]/.test(input)) { throw new Error("InvalidCharacterError"); }
+
+    while (position < input.length) {
+      o1 = input.charCodeAt(position++);
+      o2 = input.charCodeAt(position++);
+      o3 = input.charCodeAt(position++);
+      e1 = o1 >> 2;
+      e2 = ((o1 & 0x3) << 4) | (o2 >> 4);
+      e3 = ((o2 & 0xf) << 2) | (o3 >> 6);
+      e4 = o3 & 0x3f;
+
+      if (position === input.length + 2) {
+        e3 = 64; e4 = 64;
+      }
+      else if (position === input.length + 1) {
+        e4 = 64;
+      }
+
+      out.push(B64_ALPHABET.charAt(e1),
+               B64_ALPHABET.charAt(e2),
+               B64_ALPHABET.charAt(e3),
+               B64_ALPHABET.charAt(e4));
+    }
+
+    return out.join("");
+  };
+} (this));
+
+(function(f) {
+  "use strict";
+  if (!f.bind) {
+    f.bind = function(n) {
+      var c = this;
+      var b = [].slice;
+      var a = b.call(arguments, 1);
+      return function bind() {
+        return c.apply(n, a.concat(b.call(arguments)));
+      };
+    };
+  }
+}(Function.prototype));
+
+var noopReturnFirstArgument = function(a, b) {
+  return a;
+};
+
+//AJAX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var ajax = function(type, url, sendData) {
+  if (window.XMLHttpRequest) { var http = new XMLHttpRequest(); } 
+  if (window.ActiveXObject) { try { var http = new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) { try { var http = new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) { } } }
+  if (!http) { return false; }
+  http.open(type, url, true);
+  http.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+  http.onreadystatechange = function() {
+    console.log("http: " + type + "   url: " + url + "   ready: " + http.readyState + "   status: " + http.status);
+	if (http.readyState === 4 && http.status === 200) {
+      console.log(http.responseText);
+	}
+  }
+  http.send(sendData);
+  return false;
+};
+
+var uploadJSON = function (data, fileName, hrefLocation) {
+  data = JSON.stringify(data, null, "   ");
+  var encodedData = window.btoa(unescape(window.encodeURIComponent(data))) || window.btoa(unescape(window.encodeURI(data)));
+  var sendData = "dataFileName=" + fileName + "&dataJSON=" + encodedData;
+  ajax("POST", "dl/uploadJSON.php", sendData);
+  document.getElementById(hrefLocation).setAttribute("href", "dl/downloadFile.php?fileName=" + fileName);
+  return data;
+};
+
+//Strings XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var stringContains = function(a, b, capitals) {
+  a = "" + a;
+  b = "" + b;
+  if (!capitals || capitals === false) {
+    var regex = new RegExp(b, "gi");
+  } else {
+    var regex = new RegExp(b, "g");
+  }
+  return regex.test(a);
+};
+
+var stringStartsWith = function(a, b) {
+  a = "" + a;
+  b = "" + b;
+  return a.substring(0, b.length) === b;
+};
+
+var trimStringEnds = function(a, start, end) {
+
+  a = "" + a;
+
+  if (!start) { 
+    var start = " ";
+  } else {
+    start = "" + start;
+  }
+
+  if (a.length < start.length) {
+    start = start.substring(0, a.length);
+  }
+  
+  if (!end) { 
+    var end = " ";
+  } else {
+    end = "" + end;
+  }
+  
+  if (a.length < end.length) {
+    end = end.substring(0, a.length);
+  }  
+
+  if (a.length === 1) {
+    if (a === start || a === end) {
+      var empty = "";
+      return empty;
+    } else {
+	  return a;
+	}
+  }
+  
+  if (a.substring(0, start.length) === start) {
+    var x = start.length; 
+  } else { 
+    var x = 0; 
+  }
+  
+  if (a.substring(a.length - end.length, a.length) === end) {
+    var y = a.length - end.length;
+  } else {
+    var y = a.length;
+  }
+  
+  return a.substring(x, y);
+};
+
+var getExponentLatin = function(input) {
+  var a = parseInt(input, 10);
+  if (a === 1) {
+    return "linear";
+  }
+  if (a === 2) {
+    return "quadratic";
+  }
+  if (a === 3) {
+    return "cubic";
+  }
+  if (a === 4) {
+    return "biquadratic";
+  }
+  if (a === 5) {
+    return "quintic";
+  }
+  if (a === 6) {
+    return "hexic";
+  }
+  if (a === 7) {
+    return "heptic";
+  }
+  if (a === 8) {
+    return "octic";
+  }
+  if (a === 9) {
+    return "nonic";
+  }
+  if (a === 10) {
+    return "decic";
+  }
+  return "";
+};
+
+//Numbers XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var convertHex = function(a) {
+  var hex = a.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+};
+
+var randomPosNegRange = function(a) {
+  var range = 1 - (Math.random() * 2);
+  if (a) { return range * parseFloat(a); }
+  return range;
+};
+
+var exponentialValue = function(base, exponent) {
+  base = 1 * base;
+  exponent = 1 * exponent;
+  return Math.pow(base, exponent);
+};
+
+//a: start, mid: changing runtime value, b: end, z: de minimus cutoff point from b
+var testNumericBoundaries = function(a, mid, b, z) {
+
+  a = 1 * a;
+  mid = 1 * mid;
+  b = 1 * b;
+  if (!z) {
+    var z = 0;
+  } else {
+    z = 1 * z;
+  }
+  
+  if (a === b || mid === b) {
+    return b;
+  }
+  
+  if (a > b) {
+    var bound = z + b;
+    if (bound > mid || b > mid) {
+      return b;
+    }
+  }
+  
+  if (a < b) {
+    var bound = b - z;
+    if (bound < mid || b < mid) {
+      return b;
+    }
+  }
+
+  return mid;
+};
+
+//Arrays XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Array.prototype.remove = function(from, to) {  
+  var rest = this.slice((to || from) + 1 || this.length);  
+  this.length = from < 0 ? this.length + from : from;  
+  return this.push.apply(this, rest);  
+};
+
+if (!Array.prototype.indexOf) {
+  Array.prototype.indexOf = function (searchElement) {
+    "use strict";
+    if (this === null) {
+      throw new TypeError();
+    }
+    var o = Object(this);
+    var oLength = o.length >>> 0;
+    if (oLength === 0) {
+      return -1;
+    }
+    var n = 0;
+    if (arguments.length > 1) {
+      n = Number(arguments[1]);
+      if (n !== n) {
+        n = 0;
+      } else if (n !== 0 && n !== Infinity && n !== -Infinity && n !== null && n !== undefined) {
+        n = (n > 0 || -1) * Math.floor(Math.abs(n));
+      }
+    }
+    if (n >= oLength) {
+      return -1;
+    }
+    var k = n >= 0 ? n : Math.max(oLength - Math.abs(n), 0);
+    for (; k < oLength; k++) {
+      if (k in o && o[k] === searchElement) {
+        return k;
+      }
+    }
+    return -1;
+  }
+};
+
+var cycleArray = function(a) {
+  var b = a.shift();
+  a.push(b);
+  return a;
+};
+
+var cycleArrayReverse = function(a) {
+  var b = a.pop();
+  a.unshift(b);
+  return a;
+};
+
+var cycleArrayCopy = function(a) {
+  var copy = [null];
+  copy[0] = null;
+  var imax = a.length - 1;
+  var p = a[imax1];
+  copy[0] = p;
+  for (var i = 1; i < imax; i++) {
+    copy[i] = [null];
+    p = a[i];
+    copy[i] = p;
+  }
+  return copy;
+};
+
+var copyArrayA = function(a) {
+  var copy = [null];
+  var p = null;
+  var imax = a.length;
+  for (var i = 0; i < imax; i++) {
+    copy[i] = [null];
+    p = a[i];
+    copy[i] = p;
+  }
+  return copy; 
+};
+
+var copyArrayAB = function(ab) {
+  var copy = [null, null];
+  var p = null;
+  var q = null;
+  var imax = a.length;
+  for (var i = 0; i < imax; i++) {
+    copy[i] = [null, null];
+    p = ab[i][0];
+    copy[i][0] = p;
+    q = ab[i][1];
+    copy[i][1] = q;
+  }
+  return copy; 
+};
+
+var copyArrayABC = function(abc) {
+  var copy = [null, null, null];
+  var p = null;
+  var q = null;
+  var r = null;
+  var imax = a.length;
+  for (var i = 0; i < imax; i++) {
+    copy[i] = [null, null, null];
+    p = abc[i][0];
+    copy[i][0] = p;
+    q = abc[i][1];
+    copy[i][1] = q;
+    r = abc[i][2];
+    copy[i][2] = r;
+  }
+  return copy;
+};
+
+var cullUniqueValues = function(a) {
+  var result = [];
+  counter = 0;
+  var b = 0;
+  var j = 0;
+  var length = a.length;
+  for (var i = 1; i < length; i++) {
+    j = i - 1;
+    if (a[j] && a[j] !== a[i]) {
+	  b = a[j];
+	  result[counter] = b;
+	  counter++;
+	}
+  }
+  if (a[length - 1] !== a[length - 2]) {
+    b = a[length - 1];
+    a[counter] = b;
+  }
+  return result;
+};
+  
+//querySelector XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var qsa = function(a) {
+  var b = document.querySelectorAll("" + a);
+  if (!b) { b = document.querySelectorAll("." + a); }
+  if (!b) { b = document.querySelector("#" + a); }
+  if (!b) { return false; }
+  var list = [];
+  var c;
+  for (var i = 0; i < b.length; i++) {
+    c = b[i];
+    list[i] = c;
+  }
+  return list;
+};
+
+//Attributes & Properties XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var getAttributeList = function(o, input) {
+  var list = [null];
+  var j = 0;
+  var imax = o.attributes.length;
+  for (var i = 0; i < imax; i++) {
+    var item = o.attributes[i];
+    var testName = item.name.substring(0, input.length);
+    if (testName === input) {
+      var regex = /[\s]{0,}[\w]{0,}[-]{0,}[\w]{0,}[-]{0,}[\w]{1,}[-]{0,}[\w]{0,}[-]{0,}[\w]{0,}[\s]{0,}/gi;
+      var x = null;
+      while ((x = regex.exec(item.value)) !== null) {
+        var v = trimStringEnds(x[0]);
+        list[j] = [item.name, v]; 
+        console.log("getAttributeList(" + input + ").list[" + j + "]: " + list[j][0] + ": " + list[j][1]);
+        j++;
+      }
+    }
+  }
+  return list;
+};
+
+//Classes XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var hasClass = function(o, a) {
+  if (!o) { return false; }
+  a = "" + a;
+  return stringContains(o.className, a);
+};
+
+var addClass = function(o, a) {
+  if (!o) { return false; }
+  a = "" + a;
+  if (stringContains(o.className, a) === false) {
+    if (o.className.length === 0 || o.className === " ") {
+	  o.className = a;
+	} else {
+	  o.className = o.className + " " + a;
+	}
+  }
+  return o.className;
+};
+
+var removeClass = function(o, a) {
+  if (!o) { return false; }
+  a = "" + a;
+  if (stringContains(o.className, a) === false) {
+    return o.className;
+  }
+  var culled = "";
+  var updated = "";
+  var list = o.className.split(" ");
+  for (var i = 0; i < list.length; i++) {
+    culled = trimStringEnds(list[i], "  ", "  ");
+	culled = trimStringEnds(list[i], " ", " ");
+    if (culled !== a) {
+      updated += "" + list[i] + " ";
+	}
+  }
+  o.className = updated.substring(0, updated.length - 1);
+  return o.className;
+};
+
+var toggleClass = function(o, a, b) {
+  if (!o) { return false; }
+  a = "" + a;
+  b = "" + b;
+  var testA = hasClass(o, a);
+  var testB = hasClass(o, b);
+  if (testA === true && testB === false) {
+    removeClass(o, a);
+	addClass(o, b);
+  }
+  if (testA === false && testB === true) {
+    removeClass(o, b);
+	addClass(o, a);
+  }
+  if (testA === true && testB === true) {
+    removeClass(o, b);
+  }
+  if (testA === false && testB === false) {
+  	addClass(o, a);
+  }
+  return o.className;
+};
+  
+//Scaling XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var vw = function(a) {
+  if (!a) { var a = 1; } else { a = 1 * a; }
+  var cw = document.getElementById("html").clientWidth;
+  return a * ((cw * 0.000001) * 10000);
+};
+
+var vh = function(a) {
+  if (!a) { var a = 1; } else { a = 1 * a; }
+  var ch = document.getElementById("html").clientHeight;
+  return a * ((ch * 0.000001) * 10000);
+};
+
+var scaleViewport = function(a) {
+  if (!a) { var a = 1; } else { a = 1 * a; }
+  var cw = document.getElementById("html").clientWidth;
+  var w = window.screen.width;
+  return a * (cw / w);
+};
+
+var scalePhi = function() {
+  return (1 + Math.sqrt(5)) / 2;
+};
+
+var scaleLinear = function(maxMeasure, maxScreen, minMeasure, minScreen) {
+  var cw = document.getElementById("html").clientWidth;
+  return maxMeasure - ( (maxScreen - cw) * (minMeasure / (maxScreen - minScreen)) ); 
+};
+
+//Colors XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var getRandomRGBA = function(opacityFloor) {
+  var red = Math.round(Math.random() * 255);
+  var blue = Math.round(Math.random() * 255);
+  var green = Math.round(Math.random() * 255);
+  var alpha = Math.round(Math.random() * 100) / 100;
+  if (opacityFloor && alpha < opacityFloor) { alpha = opacityFloor; }
+  return "rgba(" + red + ", " + green + ", " + blue + ", " + alpha + ")";
+};
+
+var getRandomRGB = function() {
+  var red = Math.round(Math.random() * 255);
+  var blue = Math.round(Math.random() * 255);
+  var green = Math.round(Math.random() * 255);
+  return "rgba(" + red + ", " + green + ", " + blue + ")";
+};
+
+var getRandomHex = function() {
+  var red = Math.round(Math.random() * 255);
+  var blue = Math.round(Math.random() * 255);
+  var green = Math.round(Math.random() * 255);
+  return "#" + convertHex(red) + convertHex(green) + convertHex(blue);
+};
+
+var splitHexChannels = function(hex) {
+
+  hex = "" + hex;
+  
+  if (hex.substring(0, 1) === "#" && hex.length < 6) {
+    var rr = hex.substring(1, 2) + hex.substring(1, 2);
+	var gg = hex.substring(2, 3) + hex.substring(2, 3);
+	var bb = hex.substring(3, 4) + hex.substring(3, 4);
+  }
+
+  if (hex.substring(0, 1) === "#" && hex.length > 6) {
+    var rr = hex.substring(1, 3);
+	var gg = hex.substring(3, 5);
+	var bb = hex.substring(5, 7);
+  }
+ 
+  if (hex.substring(0, 1) !== "#" && hex.length > 5) {
+    var rr = hex.substring(0, 2);
+	var gg = hex.substring(2, 4);
+	var bb = hex.substring(4, 6);
+  }
+  
+  return {
+    r: parseInt(rr, 16),
+    g: parseInt(gg, 16),
+    b: parseInt(bb, 16)
+  };
+};
+
+function bitwiseToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1, 7);
+};
+
+var getColorType = function(a) {
+  if (a.substring(0, 4) === "rgba") {
+    var type = "rgba";
+  } else if (a.substring(0, 3) === "rgb" && a.substring(3, 4) !== "a") {
+    var type = "rgb";
+  } else if (a.substring(0, 1) === "#" && a.length > 3) {
+    var type = "hex";
+  } else {
+    var type = undefined;
+  }
+  return type;
+};
+
+var parseColor = function(a) {
+
+  a = "" + a;
+  
+  var type = getColorType(a);
+  if (!type) { return false; }
+  if (type !== "rgba" && type !== "rgb" && type !== "hex") { return type; }
+  
+  var result = {};
+
+  if (type === "rgba") {
+    var list = a.split(",");
+    var listZero = list[0].substring(5, list[0].length);
+    result.r = parseInt(listZero, 10);
+    result.g = parseInt(list[1], 10);
+    result.b = parseInt(list[2], 10);
+	var calcAlpha = Math.round(parseFloat(list[3]) * 100) / 100;
+	result.a = calcAlpha;
+	result.rgba = "rgba(" + result.r + ", " + result.g + ", " + result.b + ", " + result.a + ")";
+	result.rgb = "rgb(" + result.r + ", " + result.g + ", " + result.b + ")";
+	result.hex = bitwiseToHex(result.r, result.g, result.b);
+  }
+  
+  if (type === "rgb") {
+    var list = a.split(",");
+    var listZero = list[0].substring(4, list[0].length);
+    result.r = parseInt(listZero, 10);
+    result.g = parseInt(list[1], 10);
+    result.b = parseInt(list[2], 10);
+	result.a = 1;
+	result.rgba = "rgba(" + result.r + ", " + result.g + ", " + result.b + ", " + result.a + ")";
+	result.rgb = "rgb(" + result.r + ", " + result.g + ", " + result.b + ")";
+	result.hex = bitwiseToHex(result.r, result.g, result.b);
+  }
+
+  if (type === "hex") {
+    var split = splitHexChannels(a);
+    result.r = split.r;
+    result.g = split.g;
+    result.b = split.b;
+	result.a = 1;
+	result.rgba = "rgba(" + result.r + ", " + result.g + ", " + result.b + ", " + result.a + ")";
+	result.rgb = "rgb(" + result.r + ", " + result.g + ", " + result.b + ")";
+	result.hex = bitwiseToHex(result.r, result.g, result.b);
+  }
+  
+  return result;
+};
+
+var factorColor = function(start, end, factor) {
+
+  if (!start || !end) { return false; }
+  
+  if (!factor) {
+    var factor = 1;
+  } else {
+    var factor = 1 * factor;
+  }
+  
+  var result = {};
+  
+  result.r = Math.round(start.r + ((end.r - start.r) * factor));
+  result.r = Math.min(result.r, 255);
+  result.r = Math.max(result.r, 0);
+  
+  result.g = Math.round(start.g + ((end.g - start.g) * factor));
+  result.g = Math.min(result.g, 255);
+  result.g = Math.max(result.g, 0);
+  
+  result.b = Math.round(start.b + ((end.b - start.b) * factor));
+  result.b = Math.min(result.b, 255);
+  result.b = Math.max(result.b, 0);
+  
+  if ((1 * start.a) === (1 * end.a)) {
+    result.a = end.a;
+  } else {
+    result.a = start.a + ((end.a - start.a) * factor);
+    result.a = Math.round(result.a * 100) / 100;
+    result.a = Math.min(result.a, 1);
+    result.a = Math.max(result.a, 0);
+  }
+  
+  result.rgba = "rgba(" + result.r + ", " + result.g + ", " + result.b + ", " + result.a + ")";
+  result.rgb = "rgb(" + result.r + ", " + result.g + ", " + result.b + ")";
+  result.hex = bitwiseToHex(result.r, result.g, result.b);
+  
+  return result;
+};
+
+//Fonts XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var getFontFaceList = function() {
+  //[folder, name, filetype, format] 
+  //["ttf", "xxxxx", "ttf", "truetype"]
+  //["otf", "xxxxx", "otf", "opentype"]
+  //["woff", "xxxxx", "woff", "woff"]
+  var list = [["woff", "Corda", "woff", "woff"]];
+  list.push(["otf", "Junction", "otf", "opentype"]);
+  var copy = list;
+  return copy;
+};
+
+var getFontFaceTemplate = function() {
+  var content = "\n";
+  var list = getFontFaceList();
+  var folder, name, filetype, format;
+  for (var i = 0; i < list.length; i++) { 
+    folder = list[i][0];  
+    name = list[i][1];
+    filetype = list[i][2];
+    format = list[i][3];
+    content += ""
+    //-----------------------------------------------------
+    + "\n" + "@font-face {"
+    + "\n" + "  " + "font-family: " + '"' + name + '"' + ";"
+    + "\n" + "  " + "src: url(" + '"' + folder + "/" + name + "." + filetype + '"' + ") format(" + '"' + format + '"' + ");"
+    + "\n" + "  " + "font-style: normal;"
+    + "\n" + "  " + "font-weight: normal;"
+    + "\n" + "}"
+    //-----------------------------------------------------  
+    + "\n"; //End of template
+    //-----------------------------------------------------
+  }
+  content += "\n";
+  return content;
+};
+
+var setFontStyleSheet = function() {
+
+  var fontID = "style-font-face";
+  if (document.getElementById(fontID)) {
+    var old = document.getElementById(fontID);
+        old.innerHTML = null;
+        old.id = null;
+    old.parentNode.removeChild(old);
+  }
+
+  var fontImports = getFontFaceTemplate();
+  var fontID = "style-font-face";
+  var addFonts = document.createElement("style");
+      addFonts.type = "text/css";
+      addFonts.id = fontID;
+  if (addFonts.styleSheet){
+    addFonts.styleSheet.cssText = fontImports;
+  } else {
+    addFonts.appendChild(document.createTextNode(fontImports));
+  }
+  
+  var baseID = "style-base";
+  base = document.getElementById(baseID);
+  base.appendChild(addFonts);
+  
+  var head = document.getElementById("head");
+  head.appendChild(base);
+
+  var html = document.getElementById("html");
+  cleanElementHTML(html);
+  
+  return;
+};
+
+//StyleSheets XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var getStyleSheetRuleBlock = function(selector) {
+  selector = "" + selector;
+  var imax = document.styleSheets.length;
+  for (var i = 0; i < imax; i++) {
+    var jmax = document.styleSheets[i].cssRules.length;
+    for (var j = 0; j < jmax; j++) {
+      var block = document.styleSheets[i].cssRules[j];
+      if (block.selectorText === selector || 
+	      block.selectorText === "#" + selector || 
+	      block.selectorText === "." + selector) {
+		var result = {};
+		for (var rule in block.style) {
+		  if (block.style[rule] !== "" &&
+		      block.style[rule] !== null &&
+			  block.style[rule] !== undefined &&
+			  typeof block.style[rule] !== "function" &&
+			  !parseInt(rule, 10) &&
+			  rule !== 0 &&
+			  rule !== "0" &&
+			  rule !== "cssText" &&
+			  rule !== "length" &&
+			  rule !== "parentRule") {
+		    result[rule] = block.style[rule];
+		  }
+		} //for (var rule in block.style)
+      } //if (block.selectorText...
+    } //j-cycle
+  } //i-cycle
+  return result;
+};
+
+//Style Templates XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var getFluidTemplate = function() {
+
+  var fontH = "Verdana";
+  var fontP = "Verdana";
+
+  var phi = scalePhi();
+  var vwPhi = vw(phi);
+  var vwPhiSq = vw(phi * phi);
+
+  var vh1 = Math.round(vh(1));
+  var vh100 = vh1 * 100;
+  var vh110 = vh1 * 110;
+  var vh200 = vh1 * 200;
+  
+  var vw1 = Math.round(vw(1));
+  var pt2 = Math.round(vw1 * 0.2);
+  var pt25 = Math.round(vw1 * 0.25);
+  var pt5 = Math.round(vw1 * 0.5);
+  var vw2 = vw1 * 2;
+  var vw3 = vw1 * 3;
+  var vw4 = vw1 * 4;
+  var vw5 = vw1 * 5;
+  var vw6 = vw1 * 6;
+  var vw7 = vw1 * 7;
+  var vw8 = vw1 * 8;
+  var vw9 = vw1 * 9;
+  var vw10 = vw1 * 10;
+  var vw20 = vw1 * 20;
+  var vw25 = vw1 * 25;
+  var vw30 = vw1 * 30;
+  var vw40 = vw1 * 40;
+  var vw50 = vw1 * 50;
+  var vw100 = vw1 * 100;
+  var vw200 = vw1 * 200;
+  
+  var baseColor = "rgba(4, 26, 47, 1)"; //#041a2f; Indigo
+  var baseRGBA1 = "rgba(4, 26, 47, 1)"; //#041a2f; Indigo
+  var baseRGBA75 = "rgba(4, 26, 47, 0.75)"; //#041a2f; Indigo
+  
+  var hoverColor = "rgba(62, 234, 243, 0.75)"; //Electric Blue
+  
+  var content = "\n"
+//-----------------------------------------------------
+  + "\n" + "#html, #body {"
+  + "\n" + "  " + "font-size: " + vw1 + "px;"
+  + "\n" + "  " + "height: " + vh100 + "px;"
+  + "\n" + "  " + "min-height: " + vh100 + "px;"
+  + "\n" + "  " + "width: " + vw100 + "px;"
+  + "\n" + "  " + "min-width: " + vw100 + "px;"
+  + "\n" + "  " + "max-width: " + vw100 + "px;"
+  + "\n" + "  " + "overflow-x: hidden;"
+  + "\n" + "  " + "overflow-y: auto;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#main {"
+  + "\n" + "  " + "width: " + vw100 + "px;"
+  + "\n" + "  " + "min-width: " + vw100 + "px;"
+  + "\n" + "  " + "max-width: " + vw100 + "px;"
+  + "\n" + "  " + "overflow-x: hidden;"
+  + "\n" + "  " + "overflow-y: auto;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + ".clearfix {"
+  + "\n" + "  " + "clear: both;"
+  + "\n" + "  " + "content: \" \";"
+  + "\n" + "  " + "display: block;"
+  + "\n" + "  " + "outline: 0px;"
+  + "\n" + "  " + "margin: 0px;"
+  + "\n" + "  " + "border: 0px;"
+  + "\n" + "  " + "padding: 0px;"
+  + "\n" + "  " + "height: 0px;"
+  + "\n" + "  " + "width: 0px;"
+  + "\n" + "  " + "opacity: 0;"
+  + "\n" + "  " + "visibility: hidden;"
+  + "\n" + "  " + "overflow: hidden;"
+  + "\n" + "  " + "*zoom: 1;"
+  + "\n" + "  " + "color: rgba(0, 0, 0, 0);"
+  + "\n" + "  " + "background-color: rgba(0, 0, 0, 0);"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + ".text-indent {"
+  + "\n" + "  " + "text-indent: " + vw(4 / 3) + "px;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + ".button-effect {"
+  + "\n" + "  " + "border-top: " + pt2 + "px solid " + baseRGBA75 + ";"
+  + "\n" + "  " + "border-right: " + pt2 + "px solid " + baseRGBA1 + ";"
+  + "\n" + "  " + "border-bottom: " + pt2 + "px solid " + baseRGBA1 + ";"
+  + "\n" + "  " + "border-left: " + pt2 + "px solid " + baseRGBA75 + ";"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + ".button-effect:hover {"
+  + "\n" + "  " + "border-top: " + pt25 + "px solid " + baseRGBA75 + ";"
+  + "\n" + "  " + "border-right: " + pt25 + "px solid " + baseRGBA1 + ";"
+  + "\n" + "  " + "border-bottom: " + pt25 + "px solid " + baseRGBA1 + ";"
+  + "\n" + "  " + "border-left: " + pt25 + "px solid " + baseRGBA75 + ";"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + ".button-effect:active {"
+  + "\n" + "  " + "border-top: " + pt2 + "px solid " + baseRGBA1 + ";"
+  + "\n" + "  " + "border-right: " + pt2 + "px solid " + baseRGBA75 + ";"
+  + "\n" + "  " + "border-bottom: " + pt2 + "px solid " + baseRGBA75 + ";"
+  + "\n" + "  " + "border-left: " + pt2 + "px solid " + baseRGBA1 + ";"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + ".button-base {"
+  + "\n" + "  " + "z-index: 5000;"
+  + "\n" + "  " + "position: absolute;"
+  + "\n" + "  " + "cursor: pointer;"
+  + "\n" + "  " + "margin: 0px;"
+  + "\n" + "  " + "padding: 0px;"  
+  + "\n" + "  " + "height: " + vw5 + "px;"
+  + "\n" + "  " + "width: " + vw5 + "px;"
+  + "\n" + "  " + "background-size: " + vw5 + "px " + vw5 + "px !important;"
+  + "\n" + "  " + "background-position: center center !important;"
+  + "\n" + "  " + "background-color: " + baseColor + " !important;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + ".button-base:hover {"
+  + "\n" + "  " + "background-color: " + hoverColor + " !important;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#button-check {"
+  + "\n" + "  " + "top: " + pt5 + "px;"
+  + "\n" + "  " + "right: " + vw1 + "px;"
+  + "\n" + "  " + "background: url(" + getDataPNG("check") + ") no-repeat;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#button-download {"
+  + "\n" + "  " + "top: " + vw6 + "px;"
+  + "\n" + "  " + "right: " + vw1 + "px;"
+  + "\n" + "  " + "background: url(" + getDataPNG("paper") + ") no-repeat;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#svg-check, #svg-download {"
+  + "\n" + "  " + "fill: " + baseColor + ";"
+  + "\n" + "  " + "background-color: #fff;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#svg-check:hover, #svg-download:hover {"
+  + "\n" + "  " + "fill: " + hoverColor + ";"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#deck {"
+  + "\n" + "  " + "z-index: 1000;"
+  + "\n" + "  " + "display: block;"
+  + "\n" + "  " + "position: absolute;"
+  + "\n" + "  " + "top: 0px;"
+  + "\n" + "  " + "left: 0px;"
+  + "\n" + "  " + "background-color: rgba(0, 0, 0, 0);"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#modal-overlay, .modal-overlay {"
+  + "\n" + "  " + "z-index: 10000;"
+  + "\n" + "  " + "display: block;"
+  + "\n" + "  " + "cursor: pointer;"
+  + "\n" + "  " + "position: fixed;"
+  + "\n" + "  " + "top: 0px;"
+  + "\n" + "  " + "left: 0px;"
+  + "\n" + "  " + "height: " + vh100 + "px;"
+  + "\n" + "  " + "width: " + vw100 + "px;"
+  + "\n" + "  " + "background-color: rgba(0, 0, 0, 0.85);"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#modal-box, .modal-box {"
+  + "\n" + "  " + "display: block;"
+  + "\n" + "  " + "float: left;"
+  + "\n" + "  " + "border: 2px solid " + baseColor + ";"
+  + "\n" + "  " + "margin-top: " + vw1 + "px;"
+  + "\n" + "  " + "margin-left: " + vw1 + "px;"
+  + "\n" + "  " + "min-width: " + vw(15) + "px;"
+  + "\n" + "  " + "min-height: " + vw20 + "px;"
+  + "\n" + "  " + "background-color: rgba(255, 255, 255, 0.5);"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#modal-box: hover, .modal-box: hover {"
+  //+ "\n" + "  " + "background-color: rgba(255, 255, 255, 0.75);"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#modal-text, .modal-text {"
+  + "\n" + "  " + "display: block;"
+  + "\n" + "  " + "float: left;"
+  + "\n" + "  " + "padding: " + pt5 + "px;"
+  + "\n" + "  " + "border-bottom: 2px solid " + baseColor + ";"
+  + "\n" + "  " + "width: 100%;"
+  + "\n" + "  " + "font-family: " + fontP + ", Georgia, serif;"
+  + "\n" + "  " + "font-size: " + vw(0.9) + "px;"
+  + "\n" + "  " + "line-height: " + vwPhi + "px;"
+  + "\n" + "  " + "text-align: left;"
+  + "\n" + "  " + "vertical-align: baseline;"
+  + "\n" + "  " + "color: #000;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#graph, .graph {"
+  + "\n" + "  " + "display: block;"
+  + "\n" + "  " + "overflow: visible;"
+  + "\n" + "  " + "position: relative;"
+  + "\n" + "  " + "padding: " + vw1 + "px;"
+  + "\n" + "  " + "min-height: " + vw20 + "px;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#graph:hover, .graph:hover {"  
+  + "\n" + "  " + ""
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + ".graph-bar {"
+  + "\n" + "  " + "display: block;"
+  + "\n" + "  " + "float: left;"
+  + "\n" + "  " + "position: relative;"
+  + "\n" + "  " + "margin-top: " + pt5 + "px;"
+  + "\n" + "  " + "width: 5px;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + ".graph-bar:hover {"
+  + "\n" + "  " + "background-color: " + hoverColor + ";"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + ".graph-unit {"
+  + "\n" + "  " + "display: block;"
+  + "\n" + "  " + "float: left;"
+  + "\n" + "  " + "position: absolute;"
+  + "\n" + "  " + "left: 2px;"
+  + "\n" + "  " + "width: 1px;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#block {"
+  + "\n" + "  " + "z-index: 1;"
+  + "\n" + "  " + "margin-top: " + ((vh100 - vw10) / 2.5) + "px;"
+  + "\n" + "  " + "margin-bottom: 0px;"
+  + "\n" + "  " + "margin-left: " + vw(45) + "px;"
+  + "\n" + "  " + "margin-right: 0px;"
+  + "\n" + "  " + "padding: 0px;"
+  + "\n" + "  " + "height: " + vw10 + "px;"
+  + "\n" + "  " + "width: " + vw10 + "px;"
+  + "\n" + "  " + "font-family: " + fontH + ", Georgia, serif;"
+  + "\n" + "  " + "font-size: " + vw5 + "px;"
+  + "\n" + "  " + "line-height: " + vw10 + "px;"
+  + "\n" + "  " + "text-align: center;"
+  + "\n" + "  " + "vertical-align: middle;"
+  + "\n" + "  " + "overflow: hidden;"
+  + "\n" + "  " + "color: #fff;"
+  + "\n" + "  " + "background: " + getRandomRGBA(0.75) + " url(img/eyes.png) center center no-repeat;"
+  + "\n" + "  " + "background-size: 100%;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#svg-skull {"
+  + "\n" + "  " + "fill: rgba(0, 0, 0, 0.25);"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#svg-skull:hover {"
+  + "\n" + "  " + "" 
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n" + "#storage {"
+  + "\n" + "  " + "display: none !important;"
+  + "\n" + "  " + "margin-left: -500% !important;"
+  + "\n" + "}"
+  + "\n"
+//-----------------------------------------------------
+  + "\n"; //End of template
+//-----------------------------------------------------
+
+  return content;
+  
+}; //End getFluidTemplate()
+
+var setFluidStyleSheet = function() {
+
+  var fluidID = "style-fluid";
+  if (document.getElementById(fluidID)) {
+    var old = document.getElementById(fluidID);
+        old.innerHTML = null;
+        old.id = null;
+    old.parentNode.removeChild(old);
+  }
+
+  var fluidTemplate = getFluidTemplate();
+  var replaceFluid = document.createElement("style");
+      replaceFluid.type = "text/css";
+      replaceFluid.id = fluidID;
+  if (replaceFluid.styleSheet){
+    replaceFluid.styleSheet.cssText = fluidTemplate;
+  } else {
+    replaceFluid.appendChild(document.createTextNode(fluidTemplate));
+  }
+
+  var baseID = "style-base";
+  base = document.getElementById(baseID);
+  base.appendChild(replaceFluid);
+  
+  var head = document.getElementById("head");
+  head.appendChild(base);
+  
+  var html = document.getElementById("html");
+  cleanElementHTML(html);
+  
+  return;
+};
+
+//Graphing XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var displayHeader = function(title, descriptors) {
+
+  var header = document.createElement("div");
+  header.setAttribute("class", "modal-text");
+  header.innerHTML = ""
+  + "" + title
+  + "<br/>"
+  + "" + descriptors.easing.type;
+	
+  if (stringContains(descriptors.easing.type, "Bézier") === true ||
+      stringContains(descriptors.easing.type, "LERP") === true) {
+    header.innerHTML += ""
+	+ "<br/>"
+	+ "[";
+	for (var i = 0; i < descriptors.easing.controls.length; i++) {
+	  header.innerHTML += "" + (Math.round(descriptors.easing.controls[i] * 100) / 100);
+      if (i < (descriptors.easing.controls.length - 1)) { header.innerHTML += ", "; }
+	}
+	header.innerHTML += "]";
+  }
+  
+  if (stringContains(descriptors.easing.type, "Linear") === true) {
+    header.innerHTML += ""
+	+ "<br/>"
+	+ "δˆ" + (Math.round(descriptors.easing.controls * 1000000) / 1000000);
+  }
+  
+  return header;
+};
+ 
+var displayGraph = function(data, inputHeight) {
+
+  var graph = document.createElement("div");
+  //graph.id = "graph";
+  graph.setAttribute("class", "graph css-cubicIO-300ms");
+  
+  var dataMax = Math.max.apply(null, data);
+  var dataMin = Math.min.apply(null, data);
+  if (dataMin < 0) {
+	var absDataMin = Math.abs(dataMin);
+	var dataSum = dataMax + absDataMin;
+	var absData, negPadding;
+  }
+  if (dataMax < 0 && dataMin < 0) {
+	var dataSum = Math.abs(dataMax) - Math.abs(dataMin);
+	var absData, negPadding;
+  }
+  
+  var barHeight = inputHeight || vw(20);
+  var bar, unit, unitHeight;
+  for (var i = 0; i < data.length; i++) {
+
+    bar = document.createElement("div");
+    //bar.id = "graph-bar-" + i;
+	addClass(bar, "graph-bar");
+	bar.style.height = "" + barHeight + "px";
+	
+    unit = document.createElement("div");
+    //unit.id = "graph-unit-" + i;
+	addClass(unit, "graph-unit");
+	
+	if (dataMin < 0 || (dataMax < 0 && dataMin < 0)) {
+	
+	  absData = Math.abs(data[i]);
+	  unitHeight = barHeight * (absData / dataSum);
+	  if (unitHeight < 1) { unitHeight = 1 }
+	  if (unitHeight > 1 && unitHeight < 2) { unitHeight = 2 }
+	  unit.style.height = "" + unitHeight + "px";
+	  
+	  negPadding = barHeight * (absDataMin / dataSum);
+	  if (data[i] < 0) {
+	    unit.style.bottom = "" + (negPadding - unitHeight) + "px";
+        unit.style.backgroundColor = "#d3a46a"; //#d3a46a; Peintures MF Or patiné
+	  } else {
+	    unit.style.bottom = "" + negPadding + "px";
+		if (data[i] === 1) {
+	      unit.style.backgroundColor = "#fa4d09"; //#fa4d09; Flame
+	    } else {
+	      unit.style.backgroundColor = "rgba(4, 26, 47, 0.75)";
+	    }
+	  }
+	  
+	//All positive numbers in data
+	} else {
+	  unitHeight = barHeight * (data[i] / dataMax);
+	  if (unitHeight < 1) { unitHeight = 1 }
+	  if (unitHeight > 1 && unitHeight < 2) { unitHeight = 2 }
+	  unit.style.height = "" + unitHeight + "px";
+	  unit.style.bottom = "0px";
+	  if (data[i] === 1) {
+	    unit.style.backgroundColor = "#fa4d09"; //#fa4d09; Flame
+	  } else {
+	    unit.style.backgroundColor = "rgba(4, 26, 47, 0.75)";
+	  }
+	}
+	
+	bar.appendChild(unit);
+    graph.appendChild(bar);
+  }
+  
+  return graph;
+};
+
+//Loop Display XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var displayLoopResults = function(x) {
+
+  var deck = document.getElementById("deck");
+  deck.setAttribute("class", "css-cubicIO-300ms invisible");
+
+  window.setTimeout(function() {
+    deck.innerHTML = "";
+	var box, header, graph;
+    for (var i = 0; i < x.propertyIndex.length; i++) {
+	  p = "" + x.propertyIndex[i].property;
+	  
+	  box = document.createElement("div");
+	  box.setAttribute("class", "modal-box");
+	  
+	  header = displayHeader(p, x.propertyIndex[i]);
+      box.appendChild(header);
+	  
+	  graph = displayGraph(x.propertyIndex[i].easing.ratios, vw(15));
+      box.appendChild(graph);
+	  
+	  deck.appendChild(box);
+	  graph.style.height = "" + box.offsetHeight + "px";
+	}
+  }, 300);
+
+  window.setTimeout(function() {
+    deck.setAttribute("class", "css-cubicIO-300ms");
+  }, 300);
+  
+  return false;
+};
+
+var toggleDeckVisibility = function() {
+  var storage = document.getElementById("storage");
+  var counter = parseInt(storage.getAttribute("data-tests-completed"), 10);
+  if (counter < 1) {
+    showModal("faq");
+  } else {
+    var deck = document.getElementById("deck");
+    toggleClass(deck, "invisible");
+  }
+  return false;
+};
+
+//Splines XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  
+var cubicBézierParametric = function(t, points) {
+  var oneMinusT = 1 - t;
+  var f0 = oneMinusT * oneMinusT * oneMinusT * points[0];
+  var f1 = 3 * oneMinusT * oneMinusT * t * points[1];
+  var f2 = 3 * oneMinusT * t * t * points[2];
+  var f3 = t * t * t * points[3];
+  return f0 + f1 + f2 + f3;
+};
+
+var cubicBézierNewtonRaphson = function(t, points) {
+  var A = (1 * points[3]) - (3 * points[2]) + (3 * points[1]) - (1 * points[0]);    
+  var B = (3 * points[2]) - (6 * points[1]) + (3 * points[0]);
+  var C = (3 * points[1]) - (3 * points[0]);
+  var D = (1 * points[0]);
+  return (A * t * t * t) + (B * t * t) + (C * t) + D;
+};
+
+var cubicBézierCatmullRom = function(t, points) {
+  var t2 = t * t;
+  var t3 = t * t * t;
+  var f0 = ((0 - 0.5) * t3) + t2 - (0.5 * t);
+  f0 = f0 * points[0];
+  var f1 =  (1.5 * t3) - (2.5 * t2) + 1;
+  f1 = f1 * points[1];
+  var f2 = ((0 - 1.5) * t3) + (2 * t2) + (0.5 * t);
+  f2 = f2 * points[2];
+  var f3 =  (0.5 * t3) - (0.5 * t2);
+  f3 = f3 * points[3];
+  return f0 + f1 + f2 + f3;
+};
+
+var cycleSplineKnots = function(t, points) {
+  var knots = points.length - 3;
+  t = Math.min(Math.max(t, 0), 1) * knots;
+  var span = Math.floor(t);
+  if (span >= knots) { span = knots; }
+  t -= span;
+  return [t, [points[span], points[span + 1], points[span + 2], points[span + 3]]];
+};
+
+function nthBézierParametric(t, points) {
+  var knots = cycleSplineKnots(t, points);
+  t = knots[0];
+  var oneMinusT = 1 - t;
+  var f0 = oneMinusT * oneMinusT * oneMinusT * knots[1][0];
+  var f1 = 3 * oneMinusT * oneMinusT * t * knots[1][1];
+  var f2 = 3 * oneMinusT * t * t * knots[1][2];
+  var f3 = t * t * t * knots[1][3];
+  return f0 + f1 + f2 + f3;
+};
+	
+var nthBézierNewtonRaphson = function(t, points) {
+  var knots = cycleSplineKnots(t, points);
+  t = knots[0];
+  var A = knots[1][3] - (3 * knots[1][2]) + (3 * knots[1][1]) - knots[1][0];    
+  var B = (3 * knots[1][2]) - (6 * knots[1][1]) + (3 * knots[1][0]);
+  var C = (3 * knots[1][1]) - (3 * knots[1][0]);
+  //var D = knots[1][0];
+  return (A * t * t * t) + (B * t * t) + (C * t) + knots[1][0];
+};
+
+var nthBézierCatmullRom = function(t, points) {
+  var knots = cycleSplineKnots(t, points);
+  t = knots[0];
+  var f3 = ((0 - 0.5) * knots[1][0]) + (1.5 * knots[1][1]) - (1.5 * knots[1][2]) + (0.5 * knots[1][3]);
+  var f2 = knots[1][0] - (2.5 * knots[1][1]) + (2 * knots[1][2]) - (0.5 * knots[1][3]);
+  var f1 = ((0 - 0.5) * knots[1][0]) + (0.5 * knots[1][2]);
+  //var f0 = knots[1][1];
+  return (((((f3 * t) + f2) * t) + f1) * t) + knots[1][1];
+};
+
+var randomSplinePoints = function(n) {
+  if (!n || n < 4) { var n = 4 + Math.floor(Math.random() * 4); }
+  var nMinusOne = n - 1;
+  var result = [];
+  result[0] = 0;
+  for (var i = 1; i < nMinusOne; i++) { result[i] = randomPosNegRange(1); };
+  result[nMinusOne] = 1;
+  return result;
+};
+
+var randomPositiveSplinePoints = function(n) {
+  if (!n || n < 4) { var n = 4 + Math.floor(Math.random() * 4); }
+  var nMinusOne = n - 1;
+  var result = [];
+  result[0] = 0;
+  for (var i = 1; i < nMinusOne; i++) { result[i] = Math.random(); };
+  result[nMinusOne] = 1;
+  return result;
+};
+
+var biasPerlin = function(t, bias) {
+  //x^(log(B)/log(0.5))
+  if (!bias) { var bias = Math.log(bias) / Math.log(0.5); }
+  return Math.max(0, Math.pow(t, bias));
+};
+
+var lerp = function(t, a, b) {
+  return a + (t * (b - a));
+};
+
+var nthLerp = function(t, points) {
+  var span = Math.floor(t * points.length);
+  if (span > points.length - 2) { span = points.length - 2; }
+  return lerp(t, points[span], points[span + 1]);
+};
+
+//Loop Engine XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var getEasingParameters = function(a) {
+
+  var list = [];
+  list[0] = "Cubic Bézier: Parametric";
+  list[1] = "Cubic Bézier: Newton-Raphson";
+  list[2] = "Cubic Bézier: Catmull-Rom";
+  list[3] = "nth Bézier: Catmull-Rom";
+  list[4] = "Linear: Exponential";
+  list[5] = "Linear: Perlin Bias";
+  list[6] = "Linear: Time Ratio";
+  
+  var type = list[a] || list[Math.floor(Math.random() * list.length)]; 
+  
+  var result = {};
+  
+  if (type === "Cubic Bézier: Parametric") {
+    result.type = "Cubic Bézier: Parametric";
+	result.controls = randomSplinePoints(4);
+	result.formula = cubicBézierParametric;
+  }
+
+  if (type === "Cubic Bézier: Newton-Raphson") {
+    result.type = "Cubic Bézier: Newton-Raphson";
+    result.controls = randomSplinePoints(4);
+	result.formula = cubicBézierNewtonRaphson;
+  }
+
+  if (type === "Cubic Bézier: Catmull-Rom") {
+    result.type = "Cubic Bézier: Catmull-Rom";
+    result.controls = [randomPosNegRange(10), 0, 1, randomPosNegRange(10)];
+	result.formula = cubicBézierCatmullRom;
+  }
+   
+  if (type === "nth Bézier: Catmull-Rom") {
+    result.type = "";
+	result.controls = [randomPosNegRange(10)];
+	var mids = randomSplinePoints();
+	for (var i = 0; i < mids.length; i++) { result.controls.push(mids[i]); }
+	result.controls.push(randomPosNegRange(10));
+	result.type = "" + result.controls.length + "° Bézier: Catmull-Rom";
+	result.formula = nthBézierCatmullRom;
+  }
+  
+  if (type === "Linear: Exponential") {
+    result.type = "Linear: Exponential";
+    result.controls = 1 + (Math.random() * 9); 
+	result.formula = exponentialValue;
+  }
+  
+  if (type === "Linear: Perlin Bias") {
+    result.type = "Linear: Perlin Bias";
+    result.controls = Math.log(Math.random()) / Math.log(0.5);
+	result.formula = biasPerlin;
+  }
+ 
+  if (type === "Linear: Time Ratio") {
+    result.type = "Linear: Time Ratio";
+    result.controls = 1;
+	result.formula = noopReturnFirstArgument;
+  }
+  
+  return result;
+};
+
+var hyphenateCamelCase = function(camelCase) {
+  camelCase = "" + camelCase;
+  return camelCase.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+};
+
+var pullComputedStyle = function(o, p) {
+  p = p.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+  return window.getComputedStyle(o, null).getPropertyValue(p);
+};
+
+var parseColorFloat = function(a) {
+  if (a.substring(0, 3) === "rgb" || a.substring(0, 1) === "#") { return parseColor(a); }
+  return parseFloat(a);
+};
+
+var setLoopParameters = function(n) {
+
+  var x = {};
+  x.selector = n.selector;
+  x.o = document.querySelector(x.selector);
+  x.propertyIndex = [];
+  
+  var ph, parsed; //if (p !== "opacity") { x[p].cssUnit = "px"; }
+  for (var p in n.properties) {
+  
+    ph = p.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+
+	if (stringContains(ph, "color") === true) {
+      parsed = {
+	    property: ph,
+	    rendered: "",
+	    start: parseColor(window.getComputedStyle(x.o, null).getPropertyValue(ph)),
+	    end: parseColor(n.properties[p].value),
+		easing: n.properties[p].easing
+	  };
+	  
+    } else {
+      parsed = {
+	    property: ph,
+	    rendered: "",
+	    start: parseFloat(window.getComputedStyle(x.o, null).getPropertyValue(ph)),
+		delta: 0,
+	    end: parseFloat(n.properties[p].value),
+		easing: n.properties[p].easing
+	  };
+	  parsed.delta = parsed.end - parsed.start;
+	}
+	
+	parsed.easing.ratios = [];
+	
+	x.propertyIndex.push(parsed);
+  }
+  
+  x.time = {
+    ratio: 0,
+	start: 0,
+    gross: 0,
+	boundary: 0,
+	input: n.duration || 499 + Math.round(Math.random() * 1001),
+    loops: 0
+  };
+  x.time.boundary = x.time.input - 16;
+  
+  return x;
+};
+
+var updateLoopParameters = function(x) {
+
+  if (!x.o) { x.o = document.querySelector(x.selector); }
+  
+  var p, easingRatio, updated;
+  for (var i = 0; i < x.propertyIndex.length; i++) {
+	p = "" + x.propertyIndex[i].property;
+	
+    if (x.time.gross < x.time.boundary) {
+	  easingRatio = x.propertyIndex[i].easing.formula(x.time.ratio, x.propertyIndex[i].easing.controls);
+    } else {
+      easingRatio = 1;
+    }
+	x.propertyIndex[i].easing.ratios.push(easingRatio);
+	
+    if (stringContains(p, "color") === true) {
+      updated = factorColor(x.propertyIndex[i].start, x.propertyIndex[i].end, easingRatio);
+	  x.o.style[p] = "" + updated.rgba;
+    } else {
+      updated = x.propertyIndex[i].start + (x.propertyIndex[i].delta * easingRatio);
+	  updated = Math.round(updated);
+	  x.o.style[p] = "" + updated + "px";
+    }
+	x.propertyIndex[i].rendered = "" + p + ": " + x.o.style[p];
+	
+  } //i-cycle
+  
+  return x;
+};
+
+var runLoopEngine = function (loopEngine, x) {
+  x.time.start = window.performance.now();
+  return (function loopEngineRecursive(){
+    x.time.gross = window.performance.now() - x.time.start;
+    x.time.ratio = x.time.gross / x.time.input;
+    loopEngine(x);
+	x.time.loops = 1 + x.time.loops;
+	if (x.time.gross < x.time.boundary) {
+	  var rafID = window.requestAnimationFrame(loopEngineRecursive);
+	} else {
+      window.cancelAnimationFrame(rafID);
+	  displayLoopResults(x);
+	  x.o = x.o.id;
+      console.log(JSON.stringify(x, null, "   "));
+      x = null;
+	  return false;
+	}
+  }());
+};
+
+var animateElement = function(n) {
+
+  var x = setLoopParameters(n);
+  runLoopEngine(updateLoopParameters, x);
+  
+  //delete x.o;
+  //var timeStamp = "" + (Math.round(x.timeStart * 1000000) / 1000000);
+  //var fileName = "loop.json." + timeStamp + ".txt";
+  //uploadJSON(x, fileName, "href-download");
+  
+  return false;
+};
+
+//Loop Testing XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var testAnimateElement = function() {
+  var n = {
+    selector: "#block"
+  };
+  n.properties = {
+    "margin-top": {
+	  value: Math.max(0, Math.round((vh(100) * Math.random()) - vw(11))),
+	  easing: getEasingParameters()
+	},
+    "margin-left": {
+	  value: Math.max(0, Math.round((vw(100) * Math.random()) - vw(10))),
+	  easing: getEasingParameters()
+	}
+  };
+  animateElement(n);
+  return false;
+};
+
+//Modals XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var getInjectedHTML = function(id) {
+  var list = {
+    faq: ""
+	+ "<div class=\"modal-text\">"
+	  + "<div>How to use</div>"
+	  + "<br/><div>&nbsp;• The check button runs random test settings.</div>"
+	  + "<br/><div>&nbsp;• The chart button toggles a graph and a summary.</div>"
+	  + "<br/><div>&nbsp;• Get all recorded data in the console log:</div>"
+	  + "<br/><div class=\"text-indent\">··· Chrome: Tools/JavaScript Console</div>"
+	  + "<br/><div class=\"text-indent\">··· Firefox: Tools/Web Developer/Web Console</div>"
+	  + "<br/><div class=\"text-indent\">··· IE: Menu/F12 Developer Tools/Console</div>"
+	  + "<br/><div>&nbsp;• Comments or ideas? bullen77@gmail.com</div>"
+	  + "<br/><div>&nbsp;• Click anywhere to go back.</div>"
+	+ "</div>"
+  }
+  return list[id];
+};
+	
+var showModal = function(id) {
+
+  var overlay = document.createElement("div");
+  overlay.id = "modal-overlay";
+  overlay.onclick = hideModal;
+  overlay.setAttribute("class", "css-cubicIO-300ms invisible");
+  
+  var box = document.createElement("div");
+  box.id = "modal-box";
+  box.onclick = hideModal;
+  box.style.cssText = "position: fixed; top: 0px; left: 0px;";
+  box.setAttribute("class", "modal-frame");
+  box.innerHTML = getInjectedHTML(id);
+  
+  overlay.appendChild(box);
+  document.getElementById("body").appendChild(overlay);
+  
+  //Adjust top and left positioning
+  box.style.cssText = "position: fixed; top: " + ((vh(100) - box.offsetHeight) / 2.5) + "px; left: " + ((vw(100) - box.offsetWidth) / 2) + "px;";
+  
+  overlay.setAttribute("class", "css-cubicIO-300ms");
+  return false;
+};
+
+var hideModal = function() {
+  var overlay = document.getElementById("modal-overlay");
+  if (!overlay) { return false; }
+  overlay.setAttribute("class", "css-cubicIO-300ms invisible");
+  window.setTimeout(function() {
+    document.getElementById("body").removeChild(overlay);
+    overlay.innerHTML = "";
+    overlay = null;
+  }, 300);
+  return false;
+};
+
+//SVG XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var getSVGPattern = function(id) {
+  var list = {
+    check: {
+      x: 512,
+      y: 512,
+	  top: 0,
+	  left: 0,
+      points: "<polygon points=\"398.218,92.985 199.729,291.475 113.754,205.476 50,269.242 199.733,419.015 462,156.726\"/>"
+    },
+    chart: {
+      x: 512,
+      y: 512,
+	  top: 0,
+	  left: 0,
+	  points: "<path d=\"M169.428,462H62.344V358.065h107.084V462z M309.058,308.723H200.923V462h108.135V308.723z M447.637,241.533H339.503V462h108.134V241.533z M449.656,50l-87.63,15.162l19.284,19.479L249.515,211.308l-47.869-45.256 L67.632,299.57l32.968,32.423l99.658-99.654l49.362,46.705l164.53-160.616l18.73,18.906L449.656,50z\"/>"
+    },
+    skull: {
+      x: 512,
+      y: 512,
+	  top: 0,
+	  left: 0,
+ 	  points: "<path d=\"M353.896,399.149c17.841-12.101,33.169-27.171,45.638-44.87L462,416.745L416.745,462L353.896,399.149z M50,416.745l62.308-62.307c12.468,17.698,27.796,32.769,45.638,44.87L95.254,462L50,416.745z M401.615,155.639 c-12.135-17.876-27.186-33.223-44.815-45.694L416.744,50L462,95.256L401.615,155.639z M50,95.256L95.256,50l59.865,59.866 c-17.629,12.473-32.68,27.819-44.814,45.695L50,95.256z M256,108.1c-80.354,0-145.492,65.139-145.492,145.492 c0,59.155,35.305,110.062,85.992,132.806V422c3.545,5.951,13.29,10.249,25.792,12.9v-20.503h20v23.215 c9.084,0.652,18.591,0.646,27.667-0.018v-23.197h20v20.449c12.381-2.656,22.021-6.936,25.541-12.847v-35.603 c50.688-22.744,85.992-73.65,85.992-132.806C401.492,173.238,336.354,108.1,256,108.1z M192.25,308.083 c-25.561,0-46.281-20.721-46.281-46.283s20.721-46.282,46.281-46.282s46.283,20.72,46.283,46.282S217.811,308.083,192.25,308.083z M226.275,344.637l30.647-42.373l0.032,0.053l0.031-0.053l30.737,42.373H226.275z M321.75,308.083 c-25.561,0-46.282-20.721-46.282-46.283s20.722-46.282,46.282-46.282c25.562,0,46.283,20.72,46.283,46.282 S347.312,308.083,321.75,308.083z\"/>"
+    },
+    question: {
+      x: 512,
+      y: 512,
+	  top: 0,
+	  left: 0,
+	  points: "<path d=\"M259.462,462c-24.864,0-45.03-20.166-45.03-45.039c0-24.86,20.166-45.02,45.03-45.02 c24.87,0,45.029,20.159,45.029,45.02C304.491,441.834,284.332,462,259.462,462z M294.865,328.9v8.1c0,0-67.513,0-74.229,0v-8.1 c0-22.922,3.344-52.326,29.956-77.89c26.613-25.567,59.87-46.687,59.87-78.625c0-35.309-24.503-53.985-55.399-53.985 c-51.483,0-54.846,53.393-56.115,65.149H126.75C128.673,127.874,152.206,50,255.494,50c89.513,0,129.756,59.949,129.756,116.166 C385.25,255.646,294.865,271.189,294.865,328.9z\"/>"
+	}
+  };
+  
+  return list[id];
+};
+
+var injectSVG = function(n) {
+/*
+  var n = {
+    reset: ,
+    destination: ,
+    id: 
+  };
+*/
+  var pattern = getSVGPattern(n.id);
+  var svgString = "<svg"
+  + " " + "id=\"" + "svg-" + n.id + "\""
+  + " " + "version=\"" + "1.1\""
+  + " " + "xmlns=\"" + "http://www.w3.org/2000/svg\""
+  + " " + "xmlns:xlink=\"" + "http://www.w3.org/1999/xlink\""
+  + " " + "x=\"" + pattern.left + "\""
+  + " " + "y=\"" + pattern.top + "\""
+  + " " + "width=\"" + pattern.x + "\""
+  + " " + "height=\"" + pattern.y + "\""
+  + " " + "viewBox=\"" + "0 0 " + pattern.x + " " + pattern.y + "\""
+  + " " + "enable-background=\"" + "new 0 0 " + pattern.x + " " + pattern.y + "\""
+  + " " + "xml:space=\"" + "preserve\""
+  + " " + "align=\"xMaxYMax\""
+  + " " + ">"
+  + " " + pattern.points
+  + " " + "</svg>";
+  
+  var o = qsa(n.destination);
+  for (var i = 0; i < o.length; i++) {
+    if (n.reset && n.reset === "reset") { o[i].innerHTML = ""; }
+    o[i].innerHTML += svgString;
+  }
+  
+  return svgString;
+};
+
+//Images XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var getDataPNG = function(choice) {
+  var list = {
+    clear: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQI12NgYGBgAAAABQABXvMqOgAAAABJRU5ErkJggg==",
+    check: "data:image/png;base64,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",
+	chart: "data:image/png;base64,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",
+	paper: "data:image/png;base64,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",
+	question: "data:image/png;base64,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"
+  };
+  
+  if (!list[choice]) {
+    return list.clear;
+  } else {
+    return list[choice];
+  }
+};
+
+//Page Startup XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+var setWindowParameters = function() {
+
+  var body = document.getElementById("body");
+  body.setAttribute("class", "invisible");
+  
+  window.setTimeout(function() {
+  
+    setFontStyleSheet();
+    setFluidStyleSheet();
+/*
+    injectSVG({
+      reset: "reset",
+      destination: "#button-check",
+      id: "check"
+    });
+
+    injectSVG({
+      reset: "reset",
+      destination: "#button-chart",
+      id: "chart"
+    });
+	
+    injectSVG({
+      reset: "reset",
+      destination: "#button-question",
+      id: "question"
+    });
+*/
+    injectSVG({
+      reset: "reset",
+      destination: "#block",
+      id: "skull"
+    });
+	
+    body.removeAttribute("class");
+    
+  }, 100);
+  
+  return false;
+};
+window.onload = setWindowParameters;
+window.onresize = window.setTimeout(function() { setWindowParameters(); }, 100);
+
+</script>
+
+</head>
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+<body id="body">
+
+<div id="main">
+
+  <div id="button-check" class="button-base" onclick="testAnimateElement();"> </div>
+  
+  <!-- <a id="href-download"> <span id="button-download" class="button-base"> </span> </a>
+  
+  <div id="button-chart" class="button-base" onclick="toggleDeckVisibility();"> </div>
+  
+  <div id="button-question" class="button-base" onclick="nthBézierParametric(Math.random(), randomSplinePoints());"> </div> -->
+  
+  <div id="deck" class="css-cubicIO-300ms invisible"> </div>
+  
+  <div id="block" onclick="event.target.style.backgroundColor = getRandomRGBA(0.75);"> </div>
+  
+  <div id="storage" data-tests-completed="0"> </div>
+  
+</div>
+
+</body>
+
+</html>
