@@ -11,4 +11,3 @@ At the end of the animation, the page loads two simple line graphs for each CSS 
 Just for kicks, click on the animated box to change its background color, or reload the page for a new, random one. If you download the file and tinker with the Javascript, you can make this demo tween and graph any other CSS properties you might feel like trying out.
 
 I also left some modal and JSON recording-via-AJAX code in there. It works fine, but I thought it cluttered up the presentation of what is really a very simple demo. Just remove the comment marks in the `demo.html` file and adjust accordingly, etc., to see those in action.
-
