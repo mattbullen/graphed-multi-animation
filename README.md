@@ -4,4 +4,4 @@ This is an earlier version of my [3D spline animation](https://github.com/mattbu
 
 At the end of the animation, the page loads a  line graph for each CSS property. Each graph shows the delta intervals of its corresponding tween, which is useful for matching more complex splines to the movement of the icon along its path.
 
-##### Try it out: http://bullen.io/graphed-multi-animation/demo.html
+##### Try it out: http://bullen.io/spline-path-animation/demo.html
