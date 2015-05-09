@@ -1,4 +1,4 @@
-# Graphed Path Animation
+# Spline Path Animation
 
 This is an earlier version of my [3D spline animation](https://github.com/mattbullen/3D-spline-animation) page. It animates a small SVG icon around the screen by tweening the CSS properties `margin-top` and `margin-left` to random values. Each property takes a randomly selected tweening pattern: plain linear intervals up to multi-knot splines.
 
