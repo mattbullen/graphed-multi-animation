@@ -1,4 +1,4 @@
-# Spline Path Animation
+## Spline Path Animation
 
 This is an earlier version of my [3D spline animation](https://github.com/mattbullen/3D-spline-animation) page. It animates a small SVG icon around the screen by looping over the icon's CSS properties `margin-top` and `margin-left` along randomly-generated paths, which can range from simple linear intervals to complex multi-knot spline paths.
 
